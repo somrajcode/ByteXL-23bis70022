@@ -13,25 +13,5 @@
     <button class="deposit" onclick="deposit()">Deposit</button>
     <button class="withdraw" onclick="withdraw()">Withdraw</button>
   </div>
-
-  <script>
-    let balance = 0;
-    const amt = () => parseFloat(document.getElementById("amount").value) || 0;
-
-    function update() {
-      document.getElementById("balance").innerText = `$${balance.toFixed(2)}`;
-    }
-
-    function deposit() {
-      const a = amt(); if (a > 0) balance += a; update();
-      document.getElementById("amount").value = '';
-    }
-
-    function withdraw() {
-      const a = amt(); if (a > 0 && a <= balance) balance -= a;
-      else if (a > balance) alert("Insufficient balance");
-      update(); document.getElementById("amount").value = '';
-    }
-  </script>
 </body>
 </html>
